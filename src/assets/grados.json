@@ -1,0 +1,67 @@
+
+[
+    {
+      "id": "1",
+      "img": "img/ingdatos.jpeg",
+      "name": "Grado en Ciencia e Ingeniería de datos",
+      "description": "El Grado en Ciencia e Ingeniería de Datos formará a profesionales con capacidad de analizar, tanto teórica como prácticamente, dichos datos para la toma de decisiones inteligente. Si eres una persona con capacidad analítica, pensamiento crítico, con interés en la informática y con habilidades matemáticas, este grado te preparará para generar soluciones prácticas a problemas tecnológicos, empresariales y sociales.",
+      "asignaturas": [
+        "1",
+        "3",
+        "5"
+      ],
+      "href": "asignaturasgrado.html"
+    },
+    {
+      "id": "2",
+      "img": "img/inginfo.jpeg",
+      "name": "Grado en Ingeniería Informática",
+      "description": "El Grado en Ingeniería Informática tiene como objetivo la formación en un conjunto de conocimientos científicos y técnicos que hacen posible la adquisición, representación, tratamiento y transmisión de la información por medio de computadoras.",
+      "asignaturas": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "href": "asignaturasgrado.html"
+    },
+    {
+      "id": "3",
+      "img": "img/ingteleco.jpeg",
+      "name": "Grado en Telecomunicaciones",
+      "description": "El Grado en Ingeniería en Tecnologías de Telecomunicación tiene como objetivo formar profesionales a la vanguardia de los conocimientos tecnológicos y competencias profesionales de la ingeniería de telecomunicación, sin limitarse a una especialidad o tecnología concreta.",
+      "asignaturas": [
+        "2",
+        "3",
+        "4"
+      ],
+      "href": "asignaturasgrado.html"
+    },
+    {
+      "id": "4",
+      "img": "img/ingnaval.jpeg",
+      "name": "Grado en Ingeniería Naval",
+      "description": "El grado en Ingeniería Naval y Oceánica proporciona al alumno la capacidad de abordar el conjunto del proyecto de buques y artefactos oceánicos, desde embarcaciones de recreo hasta grandes estructuras offshore, incluyendo la totalidad del proceso de diseño y construcción del casco, sistemas de propulsión y sistemas auxiliares",
+      "asignaturas": [
+        "2",
+        "6"
+      ],
+      "href": "asignaturasgrado.html"
+    },
+
+  {
+    "id": "5",
+    "img": "img/ingaero.jpg",
+    "name": "Grado en Ingeniería Aeroespacial",
+    "description": "El Grado en Ingeniería Aeroespacial tiene como objetivo formar profesionales que trabajen en empresas que diseñan, fabrican y certifican una gran variedad de productos y sistemas: desde lanzaderas espaciales y satélites, hasta helicópteros y aviones, pasando por motores cohete y turbopropulsores.",
+    "asignaturas": [
+      "1",
+      "2",
+      "4"
+    ],
+    "href": "asignaturasgrado.html"
+  }
+
+
+  ]
+

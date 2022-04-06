@@ -1,0 +1,27 @@
+#cajaotrasnoticias{
+  flex-basis: 40%;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  height: auto;
+}
+
+#noticia{
+  padding-left: 0px;
+}
+
+@media screen and (min-width:640px) and (max-width:900px) {
+  #cajaotrasnoticias{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  #cajaotrasnoticias {
+    display: none;
+    width: 0%;
+  }
+
+
+}

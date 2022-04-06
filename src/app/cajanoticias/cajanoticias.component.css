@@ -1,0 +1,42 @@
+#cajanoticia{
+  margin: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#avisosyenlaces{
+  margin: 50px;
+  display: flex;
+}
+
+#enlaces{
+  flex-basis: 50%;
+  margin-right: 100px;
+}
+
+#avisos{
+  flex-basis: 50%;
+}
+
+@media screen and (min-width:640px) and (max-width:900px) {
+  #cajanoticia{
+    display:flex;
+    flex-direction: column;
+  }
+  #enlaces{
+    margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  #cajanoticia {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #avisosyenlaces {
+    display: flex;
+    flex-direction: column;
+  }
+}

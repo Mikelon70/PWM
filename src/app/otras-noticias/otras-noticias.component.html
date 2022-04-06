@@ -1,0 +1,14 @@
+
+
+
+<article id="cajaotrasnoticias">
+  <h2>Otras Noticias</h2>
+  <section id="otrasnoticias">
+    <div *ngFor="let noticia of otrasnoticiaslist| async">
+        <ul id="noticia">
+          <h4>{{ noticia.name }}</h4>
+          <p>{{noticia.description}}</p>
+        </ul>
+    </div>
+  </section>
+</article>

@@ -1,0 +1,25 @@
+#noticias1{
+  flex-basis: 50%;
+}
+
+
+@media screen and (min-width:640px) and (max-width:900px) {
+  #imgnoticiades{
+    width: 450px;
+    height: 280px;
+  }
+}
+
+
+@media screen and (max-width: 40em) {
+  #noticias1 {
+    width: 100%;
+    align-items: center;
+  }
+
+  #imgnoticiades {
+    max-width: 100%;
+    height: auto;
+
+  }
+}

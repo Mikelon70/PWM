@@ -10,6 +10,8 @@ import { CajanoticiasComponent } from './cajanoticias/cajanoticias.component';
 import { NoticiasdestacadasComponent } from './noticiasdestacadas/noticiasdestacadas.component';
 import { EnlacesComponent } from './enlaces/enlaces.component';
 import { AvisosComponent } from './avisos/avisos.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { AvisosComponent } from './avisos/avisos.component';
     NoticiasList,
     NoticiasdestacadasComponent,
     EnlacesComponent,
-    AvisosComponent
+    AvisosComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   bootstrap: [
     AppComponent

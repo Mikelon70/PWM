@@ -1,0 +1,57 @@
+
+.listaGrados, .listaAsignaturas{
+  list-style-type: none;
+  margin-left: 30px;
+  margin-right: 50px;
+  margin-top: 20px;
+  height: auto;
+  display: flex;
+  background-color: #a4fadb;
+  padding-bottom: 20px;
+}
+
+.fotoGrado, .fotoAsignatura{
+  margin-top: 30px;
+}
+
+.cajaInfoGrados, .cajaInfoAsignaturas{
+  margin-left: 40px;
+}
+
+@media screen and (min-width:640px) and (max-width:900px){
+  .listaGrados, .listaAsignaturas{
+    solid-color: black;
+  }
+
+  .descripcion{
+    margin-right: 20px;
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 40em){
+  .fotoinfogrado, .fotoinfoasignatura {
+    text-align: center;
+  }
+
+  .imgGrado, .imgAsignatura {
+    width: 100%;
+    height: 100%;
+  }
+  .fotoGrado, .fotoAsignatura {
+    width: 80%;
+    height: auto;
+    align-content: center;
+    margin-left: 10%;
+  }
+  .listaGrados, .listaAsignaturas {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .cajaInfoGrados, .cajaInfoAsignaturas{
+    margin-left: 0px;
+  }
+}
+

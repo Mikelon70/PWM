@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule , Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 
@@ -12,6 +12,9 @@ import { EnlacesComponent } from './enlaces/enlaces.component';
 import { AvisosComponent } from './avisos/avisos.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { SobrenosotrosComponent } from './sobrenosotros/sobrenosotros.component';
+import { GradosComponent } from './grados/grados.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -21,6 +24,9 @@ import { FooterComponent } from './footer/footer.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: CajanoticiasComponent},
+      { path:'sobrenosotros', component: SobrenosotrosComponent},
+      { path:'grados', component: GradosComponent},
+      { path:'login', component: LoginComponent},
     ])
   ],
   declarations: [
@@ -31,7 +37,10 @@ import { FooterComponent } from './footer/footer.component';
     EnlacesComponent,
     AvisosComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SobrenosotrosComponent,
+    GradosComponent,
+    LoginComponent
   ],
   bootstrap: [
     AppComponent

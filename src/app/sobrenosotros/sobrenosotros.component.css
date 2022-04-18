@@ -1,0 +1,46 @@
+#cajainfo {
+  display: flex;
+  padding-top: 20px;
+}
+
+#infouni {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#video {
+  text-align: center;
+}
+
+#botonnuestrosgrados {
+  margin-top: 30px;
+  bottom: -42%;
+  left: 0;
+}
+
+@media screen and (min-width:640px) and (max-width:900px) {
+  #fotouni {
+    text-align: center;
+  }
+
+  #cajainfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+/* under 640 px */
+@media screen and (max-width: 40em) {
+
+  #fotouni {
+    text-align: center;
+
+  }
+  #cajainfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+

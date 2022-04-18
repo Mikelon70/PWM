@@ -1,0 +1,27 @@
+<h2 id="titulologin">Login</h2>
+
+<form id="login" action="" method="post">
+  <div id="caja_login">
+    <input class="formulario" id="textodni" placeholder="Dni" type="text" name="dni" required pattern="[0-9]{8}">
+    <input class="formulario" id="textocontraseña" type="password" placeholder="Contraseña" name="contraseña" required pattern="[A-Za-z0-9]{8,12}">
+    <input id="botonLogin" type="submit" value="Entrar">
+  </div>
+</form>
+
+
+<h2 id="tituloregistrarse">Registrarse</h2>
+
+<form id="registro" action="" method="post">
+  <div id="caja_registro">
+    <input class="formulario" id="textdni" type="text" placeholder="Dni" name="dniregistro" required pattern="[0-9]{8}">
+    <input class="formulario" id="textocorreo" type="email" placeholder="Correo electrónico" required name="correo">
+    <input class="formulario" id="textonombre" type="text" placeholder="Nombre" name="nombre" required maxlength="20">
+    <input class="formulario" id="textocontraseñaR" type="password" placeholder="Contraseña" name="contraseñaR"  required pattern="[A-Za-z0-9]{8,12}">
+    <input class="formulario" id="textorepcontraseña" type="password" placeholder="Repetir Contraseña" name="repcontraseña" required pattern="[A-Za-z0-9]{8,12}">
+    <input class="formulario" id="textodireccion" placeholder="Dirección" type="text" name="direccion" maxlength="50">
+
+    <p>Subir foto de perfil <em>(opcional)</em></p>
+    <input type="file" name="foto" size="10">
+    <input id="botonRegistro" type="submit" value="Registrarse">
+  </div>
+</form>

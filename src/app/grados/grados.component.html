@@ -1,0 +1,14 @@
+<h1>Grados ofertados</h1>
+<div *ngFor="let grado of gradoslist| async">
+  <ul class="listaGrados">
+    <img class="fotoGrado" src="{{grado.img}}" width="120" height="120">
+    <section class="cajaInfoGrados">
+      <h2 id="titulogrados">{{ grado.name }}</h2>
+      <p>{{grado.description}}</p>
+      <a href="asignaturas.html" id="botonnuestrosgrados">
+        <button style="height: 12%; width: 120px;">Más información</button>
+      </a>
+    </section>
+
+  </ul>
+</div>

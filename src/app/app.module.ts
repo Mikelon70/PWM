@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule , Routes } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import {NoticiasList} from "./otras-noticias/otras-noticias.component";
+import { NoticiasList } from "./otras-noticias/otras-noticias.component";
 import { CajanoticiasComponent } from './cajanoticias/cajanoticias.component';
 import { NoticiasdestacadasComponent } from './noticiasdestacadas/noticiasdestacadas.component';
 import { EnlacesComponent } from './enlaces/enlaces.component';
@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SobrenosotrosComponent } from './sobrenosotros/sobrenosotros.component';
 import { GradosComponent } from './grados/grados.component';
 import { LoginComponent } from './login/login.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 
 @NgModule({
@@ -23,11 +24,14 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: CajanoticiasComponent},
-      { path:'sobrenosotros', component: SobrenosotrosComponent},
-      { path:'grados', component: GradosComponent},
-      { path:'login', component: LoginComponent},
-    ])
+      {path: '', component: CajanoticiasComponent},
+      {path: 'sobrenosotros', component: SobrenosotrosComponent},
+      {path: 'grados', component: GradosComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'usuario/:userID', component: UsuarioComponent},
+
+    ]),
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -40,7 +44,8 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     SobrenosotrosComponent,
     GradosComponent,
-    LoginComponent
+    LoginComponent,
+    UsuarioComponent,
   ],
   bootstrap: [
     AppComponent

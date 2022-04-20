@@ -1,0 +1,62 @@
+
+[
+  {
+    "id": "1234",
+    "img": "assets/img/fotoAlumno.png",
+    "name": "Alberto Socas Mendoza",
+    "asignaturas": [
+      "1",
+      "3",
+      "5"
+    ],
+    "tipo": "profesor",
+    "correo": "albertosocas@alu.ut.net"
+  },
+  {
+    "id": "1235",
+    "img": "assets/img/fotoAlumno.png",
+    "name": "Pepito García Hernández",
+    "asignaturas": [],
+    "tipo": "nomatriculado",
+    "notamedia": "6,3",
+    "correo": "pepitogarcia@alu.ut.net"
+  },
+  {
+    "id": "1236",
+    "img": "assets/img/fotoAlumno.png",
+    "name": "Ernesto Valverde Suárez",
+    "asignaturas": [
+      "2",
+      "3",
+      "4"
+    ],
+    "tipo": "matriculado",
+    "notamedia": "8,4",
+    "correo": "ernestovalverde@alu.ut.net"
+  },
+  {
+    "id": "1237",
+    "img": "assets/img/fotoAlumno.png",
+    "name": "Raúl Jiménez Rodríguez",
+    "asignaturas": [
+      "2",
+      "6"
+    ],
+    "tipo": "matriculado",
+    "notamedia": "5,2",
+    "correo": "rauljimenez@alu.ut.net"
+  },
+
+  {
+    "id": "1238",
+    "img": "assets/img/fotoAlumno.png",
+    "name": "Jesús Ramos García",
+    "asignaturas": [],
+    "tipo": "nomatriculado",
+    "notamedia": "9,3",
+    "correo": "jesusramos@alu.ut.net"
+  }
+
+
+]
+

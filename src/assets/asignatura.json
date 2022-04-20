@@ -5,7 +5,13 @@
     "name": "Matemáticas",
     "description": "aqui va la descripcion de la asignatura",
     "grados": ["1","2"],
-    "href": "asignatura.html"
+    "href": "asignatura.html",
+    "creditos": "6",
+    "rama": "",
+    "materia": "",
+    "semestre": "",
+    "profesores": [],
+    "objetivos": []
   },
 
   {
@@ -14,7 +20,13 @@
     "name": "Física",
     "description": "aqui va la descripcion de la asignatura",
     "grados": ["2","3","4"],
-    "href": "asignatura.html"
+    "href": "asignatura.html",
+    "creditos": "6",
+    "rama": "",
+    "materia": "",
+    "semestre": "",
+    "profesores": [],
+    "objetivos": []
   },
 
   {
@@ -23,7 +35,13 @@
     "name": "Programación",
     "description": "aqui va la descripcion de la asignatura",
     "grados": ["1","2","3"],
-    "href": "asignatura.html"
+    "href": "asignatura.html",
+    "creditos": "6",
+    "rama": "",
+    "materia": "",
+    "semestre": "",
+    "profesores": [],
+    "objetivos": []
   },
 
   {
@@ -32,7 +50,13 @@
     "name": "Computadores",
     "description": "aqui va la descripcion de la asignatura",
     "grados": ["1","2","3"],
-    "href": "asignatura.html"
+    "href": "asignatura.html",
+    "creditos": "6",
+    "rama": "",
+    "materia": "",
+    "semestre": "",
+    "profesores": [],
+    "objetivos": []
   },
 
   {
@@ -41,7 +65,13 @@
     "name": "Base de datos",
     "description": "aqui va la descripcion de la asignatura",
     "grados": ["1","2"],
-    "href": "asignatura.html"
+    "href": "asignatura.html",
+    "creditos": "6",
+    "rama": "",
+    "materia": "",
+    "semestre": "",
+    "profesores": [],
+    "objetivos": []
   },
 
   {
@@ -50,7 +80,13 @@
     "name": "Construcción de barcos",
     "description": "aqui va la descripcion de la asignatura",
     "grados": ["4"],
-    "href": "asignatura.html"
+    "href": "asignatura.html",
+    "creditos": "6",
+    "rama": "",
+    "materia": "",
+    "semestre": "",
+    "profesores": [],
+    "objetivos": []
   }
 ]
 

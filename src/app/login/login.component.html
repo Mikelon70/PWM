@@ -2,9 +2,9 @@
 
 <form id="login" action="" method="post">
   <div id="caja_login">
-    <input class="formulario" id="textodni" placeholder="Dni" type="text" name="dni" required pattern="[0-9]{8}">
+    <input class="formulario" id="textodni" placeholder="Dni" type="text" name="dni" [(ngModel)]=id>
     <input class="formulario" id="textocontraseña" type="password" placeholder="Contraseña" name="contraseña" required pattern="[A-Za-z0-9]{8,12}">
-    <input id="botonLogin" type="submit" value="Entrar">
+    <button id="botonLogin" (click)=sendDetails()>Entrar</button>
   </div>
 </form>
 

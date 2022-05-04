@@ -15,7 +15,9 @@ import { FooterComponent } from './footer/footer.component';
 import { SobrenosotrosComponent } from './sobrenosotros/sobrenosotros.component';
 import { GradosComponent } from './grados/grados.component';
 import { LoginComponent } from './login/login.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { environment } from "../environments/environment";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 
 
 @NgModule({
@@ -23,12 +25,13 @@ import { UsuarioComponent } from './usuario/usuario.component';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     RouterModule.forRoot([
       {path: '', component: CajanoticiasComponent},
       {path: 'sobrenosotros', component: SobrenosotrosComponent},
       {path: 'grados', component: GradosComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'usuario/:userID', component: UsuarioComponent},
 
     ]),
     FormsModule
@@ -45,7 +48,6 @@ import { UsuarioComponent } from './usuario/usuario.component';
     SobrenosotrosComponent,
     GradosComponent,
     LoginComponent,
-    UsuarioComponent,
   ],
   bootstrap: [
     AppComponent

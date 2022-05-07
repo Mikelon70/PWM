@@ -34,4 +34,9 @@ export class GradosComponent implements OnInit {
         ...c.payload.val() }) ) ) )
       .subscribe(data => { this.gradoslist = data; });
   }
+
+  getKeyByValue(gradoslist: Grado[], grado: Grado) {
+    // @ts-ignore
+    Object.keys(gradoslist).find(key => gradoslist[key] === grado)
+  }
 }

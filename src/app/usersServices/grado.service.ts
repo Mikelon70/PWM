@@ -19,11 +19,23 @@ export class GradoService {
   gradosRef: AngularFireList<Grado>;
   private dbPath = '/grados';
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase, private firestore: AngularFirestore) {
     this.gradosRef = db.list(this.dbPath);
   }
 
   getGrados(): AngularFireList<Grado> {
     return this.gradosRef;
+  }
+
+  getAsignaturas(id: string) {
+    let asignaturas: number[] = []
+    this.firestore
+      .collection('grados')
+      .doc(id)
+      .valueChanges()
+      // @ts-ignore
+      .subscribe((doc) => asignaturas = doc.asignaturas)
+
+    return asignaturas;
   }
 }

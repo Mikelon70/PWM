@@ -32,6 +32,7 @@ import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
       {path: 'sobrenosotros', component: SobrenosotrosComponent},
       {path: 'grados', component: GradosComponent},
       {path: 'login', component: LoginComponent},
+      //{path: 'grado/:id', component: //GradoComponent},
 
     ]),
     FormsModule

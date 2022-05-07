@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { Grado } from '../objects'
+import { GradoService} from "../usersServices/grado.service";
+import {map} from "rxjs";
 
 @Component({
   selector: 'app-grados',
@@ -8,12 +11,27 @@ import {HttpClient} from '@angular/common/http';
 })
 export class GradosComponent implements OnInit {
 
-  constructor(private http: HttpClient) {
+  gradoslist?: Grado[]
+
+  constructor(private gradeService: GradoService) {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    /*this.gradeService.getGrados()
+      .subscribe(data => {
+        this.gradoslist = data.map( e => {
+          return {
+            // @ts-ignore
+            id: e.payload.doc.id,
+            ...e.payload.doc.data()
+          } as Grado;
+          })})*/
+
+    this.gradeService.getGrados().snapshotChanges()
+      .pipe( map(changes => changes.map(c => ({
+        key: c.payload.key,
+        ...c.payload.val() }) ) ) )
+      .subscribe(data => { this.gradoslist = data; });
   }
-  gradoslist = this.http.get<{img:string, name:string, description:string}[]>
-  ('/assets/grados.json');
 }

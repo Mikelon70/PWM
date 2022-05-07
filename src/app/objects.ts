@@ -6,3 +6,12 @@ export interface User{
   averageGrade: string;
   email: string;
 }
+
+export interface Grado {
+  id?: number;
+  img?: string;
+  name?: string;
+  description?: string;
+  asignaturas?: number[];
+}
+

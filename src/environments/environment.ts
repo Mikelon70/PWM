@@ -1,5 +1,7 @@
 
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "@angular/fire/firestore";
+import { getAuth } from "@angular/fire/auth";
 export const environment = {
   production: false,
 // Import the functions you need from the SDKs you need
@@ -9,12 +11,12 @@ export const environment = {
 
 // Your web app's Firebase configuration
    firebaseConfig: {
-    apiKey: "AIzaSyBtCK8r7xEQxtAUD_nmxtd-z-y-xEmBLS8",
-    authDomain: "universidadtecnologica-pwm.firebaseapp.com",
-    projectId: "universidadtecnologica-pwm",
-    storageBucket: "universidadtecnologica-pwm.appspot.com",
-    messagingSenderId: "569616541551",
-    appId: "1:569616541551:web:0a8f97fea9426de1a06a9a"
+     apiKey: "AIzaSyAttAyFtT9faWN69Fge7pj7-z4x1qFpTo8",
+     authDomain: "pruebafirebase-3d1a3.firebaseapp.com",
+     projectId: "pruebafirebase-3d1a3",
+     storageBucket: "pruebafirebase-3d1a3.appspot.com",
+     messagingSenderId: "678790419337",
+     appId: "1:678790419337:web:db4568699b96f633890758"
   }
 };
 

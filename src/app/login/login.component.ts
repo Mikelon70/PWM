@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../usersServices/user.service';
+import {Grado, User} from "../objects";
+import { UserService } from "../usersServices/user.service";
+import { tap } from "rxjs";
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import {DocumentChangeAction} from "@angular/fire/compat/firestore";
 
 @Component({
   selector: 'app-login',
@@ -9,23 +13,88 @@ import { UserService } from '../usersServices/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  checkoutForm: FormGroup;
+  RegisterForm: FormGroup;
+  id: string = "";
+  name: string = "";
+  email: string = "";
+  password: string = "";
+  passwordRepeated: string = "";
+  registered: number = 0;
+  users!: User[];
 
-  id="";
+  @Input() user!: User;
 
+  constructor(public fb: FormBuilder, private userService: UserService, private router: Router,
+              private firebaseAuth: AngularFireAuth) {
+    this.checkoutForm = this.fb.group({
+      id: ['', [Validators.required]],
+      password: ['', [Validators.required]]
+    });
 
-  constructor(
-              public userService: UserService,
-              private http: HttpClient,
-              private router: Router) {
-
+    this.RegisterForm = this.fb.group({
+      id: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      name: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+      passwordRepeated: ['', [Validators.required]]
+    });
   }
 
   ngOnInit(): void {
-
+    this.userService.getUsuarios()
+      .subscribe(data => {
+        this.users = data.map( e => {
+          return {
+            // @ts-ignore
+            id: e.payload.doc.id,
+            ...e.payload.doc.data()
+          } as User;
+        })})
   }
 
-  sendDetails(){
-    //this.http.get('http://localhost:4200/usuarios/'+this.id);
-    this.router.navigate(["/usuario/"+this.id]);
+  onSubmit(): void {
+    this.id = this.checkoutForm.get('id')?.value;
+    this.password = this.checkoutForm.get('password')?.value;
+    if (!this.checkoutForm.valid) {
+      window.alert("Es necesario rellenar todos los campos");
+    } else {
+      if (Object.keys(this.users).find(this.RegisterForm.value.id)) {
+        if (this.users[this.RegisterForm.value.id].password == this.RegisterForm.value.password) {
+          this.router.navigate(['']);
+        }
+      }
+    }
+  }
+
+  onSubmitRegister(): void {
+    console.debug("hey");
+    this.id = this.RegisterForm.get('id')?.value;
+    this.email = this.RegisterForm.get('email')?.value;
+    this.name = this.RegisterForm.get('name')?.value;
+    this.password = this.RegisterForm.get('password')?.value;
+    this.passwordRepeated = this.RegisterForm.get('passwordRepeated')?.value;
+
+    if (!this.RegisterForm.valid){
+      window.alert("Es necesario rellenar todos los campos o el formato de algún campo es incorrecto");
+    }
+    else{
+      if(this.passwordRepeated != this.password)
+      {
+        window.alert("Las contraseñas deben coincidir. Por favor vuelva a intentarlo.");
+      }
+      else
+      {
+        this.users.forEach((user) => {
+          if (user.id == this.RegisterForm.value.id){
+            window.alert("Debe de escoger otro usuario, ya se encuentra registrado");
+            this.registered = 1;
+          }
+        });
+        if (this.registered != 1) {
+          this.userService.addNewUser(this.RegisterForm.value.id, this.RegisterForm.value.name, this.RegisterForm.value.email, this.RegisterForm.value.password);
+        }
+      }
+    }
   }
 }

@@ -1,10 +1,11 @@
 export interface User{
   id: string;
   name: string;
-  subjects: any;
-  type: string;
-  averageGrade: string;
   email: string;
+  password: string;
+  type: string;
+  subjects: number[];
+  img: string;
 }
 
 export interface Grado {

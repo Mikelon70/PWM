@@ -1,27 +1,70 @@
-<h2 id="titulologin">Login</h2>
+<div class="contenedorForm">
+    <h3 id="titulologin">Inicio de Sesión</h3>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" novalidate>
+      <label> DNI </label>
+      <div class="input">
+        <input type="text" id="id" name="id" formControlName="id" required >
+      </div>
 
-<form id="login" action="" method="post">
-  <div id="caja_login">
-    <input class="formulario" id="textodni" placeholder="Dni" type="text" name="dni" [(ngModel)]=id>
-    <input class="formulario" id="textocontraseña" type="password" placeholder="Contraseña" name="contraseña" required pattern="[A-Za-z0-9]{8,12}">
-    <button id="botonLogin" (click)=sendDetails()>Entrar</button>
+      <label>Contraseña</label>
+      <div class="input">
+        <input type="password" id="password" name="passwd" formControlName="password" required >
+      </div>
+
+      <div class="avisoRestriccion" *ngIf="this.checkoutForm.get('password')?.errors?.['required'] || this.checkoutForm.get('user')?.errors?.['required']">
+        <div> Todos los campos deben rellenarse</div>
+      </div>
+
+      <div class="botonForm">
+        <button type="submit" value="Iniciar Sesión" id="inicio">
+          Iniciar Sesión
+        </button>
+      </div>
+    </form>
+
+    <h2 id="tituloregistrarse">Registro</h2>
+
+    <form id="form" [formGroup]="RegisterForm" (ngSubmit)="onSubmitRegister()" novalidate>
+      <label>DNI</label>
+      <div class="inputRegistro">
+        <input type="text" id="id" name="id" formControlName="id" required>
+      </div>
+
+      <label>Email</label>
+      <div class="inputRegistro">
+        <input type="email" id="newemail" name="email" formControlName="email" required>
+      </div>
+
+      <label>Nombre</label>
+      <div class="inputRegistro">
+        <input type="text" id="nombre" name="nombre" formControlName="name" required>
+      </div>
+
+      <label>Contraseña</label>
+      <div class="inputRegistro">
+        <input type="password" id="passwd" name="passwd" formControlName="password" required>
+      </div>
+
+      <label>Repetir contraseña</label>
+      <div class="inputRegistro">
+        <input type="password" id="repeatPasswd" name="repeatPasswd" formControlName="passwordRepeated" required>
+      </div>
+
+      <div class="avisoRestriccion" *ngIf="this.RegisterForm.get('id')?.errors?.['required'] || this.RegisterForm.get('email')?.errors?.['required'] ||
+            this.RegisterForm.get('name')?.errors?.['required'] || this.RegisterForm.get('password')?.errors?.['required']
+            || this.RegisterForm.get('passwordRepeated')?.errors?.['required']">
+        Todos los campos deben rellenarse
+      </div>
+
+      <div class="avisoRestriccion" *ngIf="this.RegisterForm.get('email')?.errors?.['email']">
+        Formato de correo incorrecto
+      </div>
+
+      <div class="botonFormRegistro">
+        <button type="submit" value="Registrarse" id="registro">
+          Registrarse
+        </button>
+      </div>
+
+    </form>
   </div>
-</form>
-
-
-<h2 id="tituloregistrarse">Registrarse</h2>
-
-<form id="registro" action="" method="post">
-  <div id="caja_registro">
-    <input class="formulario" id="textdni" type="text" placeholder="Dni" name="dniregistro" required pattern="[0-9]{8}">
-    <input class="formulario" id="textocorreo" type="email" placeholder="Correo electrónico" required name="correo">
-    <input class="formulario" id="textonombre" type="text" placeholder="Nombre" name="nombre" required maxlength="20">
-    <input class="formulario" id="textocontraseñaR" type="password" placeholder="Contraseña" name="contraseñaR"  required pattern="[A-Za-z0-9]{8,12}">
-    <input class="formulario" id="textorepcontraseña" type="password" placeholder="Repetir Contraseña" name="repcontraseña" required pattern="[A-Za-z0-9]{8,12}">
-    <input class="formulario" id="textodireccion" placeholder="Dirección" type="text" name="direccion" maxlength="50">
-
-    <p>Subir foto de perfil <em>(opcional)</em></p>
-    <input type="file" name="foto" size="10">
-    <input id="botonRegistro" type="submit" value="Registrarse">
-  </div>
-</form>

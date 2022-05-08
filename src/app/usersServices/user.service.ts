@@ -14,7 +14,7 @@ export class UserService {
   constructor(private firebaseAuth: AngularFireAuth,private firestore: AngularFirestore) { }
 
   // Sign up with email/password
-  signUp(email: string, password: string) {
+  /*signUp(email: string, password: string) {
     return this.firebaseAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
@@ -24,9 +24,10 @@ export class UserService {
       .catch((error) => {
         window.alert(error.message);
       });
-  }
+  }*/
+
   // Sign in with email/password
-  login(email: string, password: string) {
+  /*login(email: string, password: string) {
     return this.firebaseAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
@@ -35,14 +36,14 @@ export class UserService {
       .catch((error) => {
         window.alert(error.message);
       });
-  }
+  }*/
 
   getUsuarios() {
-    return this.firestore.collection<User>('usuarios').valueChanges();
+    return this.firestore.collection<User>('users').snapshotChanges();
   }
 
   addNewUser(newId:string, name:string, email:string, averageGrade:string){
-    this.firestore.collection("usuarios").doc(newId)
+    this.firestore.collection("users").doc(newId)
       .set({name: name, email: email, averageGrade:averageGrade}).then (r =>{});
   }
 

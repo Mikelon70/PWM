@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { UserService } from '../usersServices/user.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,12 +12,16 @@ export class LoginComponent implements OnInit {
 
   id="";
 
-  constructor(private http: HttpClient,
+
+  constructor(
+              public userService: UserService,
+              private http: HttpClient,
               private router: Router) {
 
   }
 
   ngOnInit(): void {
+
   }
 
   sendDetails(){

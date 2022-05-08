@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import { Grado } from '../objects'
 import { GradoService} from "../usersServices/grado.service";
 import {map} from "rxjs";
+import firebase from "firebase/compat";
+import firestore = firebase.firestore;
 
 @Component({
   selector: 'app-grados',
@@ -18,7 +20,7 @@ export class GradosComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*this.gradeService.getGrados()
+    this.gradeService.getGrados()
       .subscribe(data => {
         this.gradoslist = data.map( e => {
           return {
@@ -26,17 +28,12 @@ export class GradosComponent implements OnInit {
             id: e.payload.doc.id,
             ...e.payload.doc.data()
           } as Grado;
-          })})*/
-
-    this.gradeService.getGrados().snapshotChanges()
-      .pipe( map(changes => changes.map(c => ({
-        key: c.payload.key,
-        ...c.payload.val() }) ) ) )
-      .subscribe(data => { this.gradoslist = data; });
+          })})
   }
 
   getKeyByValue(gradoslist: Grado[], grado: Grado) {
     // @ts-ignore
     Object.keys(gradoslist).find(key => gradoslist[key] === grado)
   }
+
 }

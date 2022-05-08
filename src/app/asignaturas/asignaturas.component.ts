@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Asignatura, Grado} from '../objects'
+import {Asignatura} from '../objects'
 import { GradoService} from "../usersServices/grado.service";
-import {map} from "rxjs";
 import firebase from "firebase/compat";
-import firestore = firebase.firestore;
 import {ActivatedRoute} from "@angular/router";
 
 @Component({

@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  sesioniniciada: boolean=false;
+
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
 

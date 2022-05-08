@@ -1,6 +1,6 @@
+
+
 #login{
-  margin-left: 20%;
-  margin-right: 20%;
   background-color: #a4fadb;
 }
 #titulologin, #tituloregistrarse{
@@ -12,7 +12,9 @@
 #tituloregistrarse{
   margin-top: 50px;
 }
-
+#registro{
+  margin-bottom: 170px;
+}
 
 .fichero{
   flex-basis: 50% ;
@@ -31,16 +33,6 @@
   margin-top: 40px;
   width: 150px;
 }
-
-#registro{
-  height: auto;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-bottom: 20px;
-  background-color: #a4fadb;
-  padding-bottom: 20px;
-}
-
 
 #login{
   display: flex;

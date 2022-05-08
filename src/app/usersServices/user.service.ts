@@ -14,7 +14,7 @@ export class UserService {
   constructor(private firebaseAuth: AngularFireAuth,private firestore: AngularFirestore) { }
 
   // Sign up with email/password
-  /*signUp(email: string, password: string) {
+  signUp(email: string, password: string) {
     return this.firebaseAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
@@ -24,10 +24,10 @@ export class UserService {
       .catch((error) => {
         window.alert(error.message);
       });
-  }*/
+  }
 
   // Sign in with email/password
-  /*login(email: string, password: string) {
+  login(email: string, password: string) {
     return this.firebaseAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
@@ -36,15 +36,15 @@ export class UserService {
       .catch((error) => {
         window.alert(error.message);
       });
-  }*/
+  }
 
   getUsuarios() {
     return this.firestore.collection<User>('users').snapshotChanges();
   }
 
-  addNewUser(newId:string, name:string, email:string, averageGrade:string){
-    this.firestore.collection("users").doc(newId)
-      .set({name: name, email: email, averageGrade:averageGrade}).then (r =>{});
+  addNewUser(id:string, name:string, email:string, password:string){
+    this.firestore.collection("users").doc(id)
+      .set({name: name, email: email, password: password, type: "no matriculado", subjects: [], img: "https://firebasestorage.googleapis.com/v0/b/pruebafirebase-3d1a3.appspot.com/o/fotoAlumno.png?alt=media&token=620650c8-0457-4214-9521-ed73c62f9d6a"}).then (r =>{});
   }
 
 }

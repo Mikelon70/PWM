@@ -27,9 +27,9 @@ export class UserService {
   }
 
   // Sign in with email/password
-  login(email: string, password: string) {
+  login(id: string, userId: string, password: string) {
     return this.firebaseAuth
-      .signInWithEmailAndPassword(email, password)
+      .signInWithEmailAndPassword(id, password)
       .then((result) => {
         console.log(result);
       })

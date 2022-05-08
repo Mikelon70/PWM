@@ -11,7 +11,7 @@
         <input type="password" id="password" name="passwd" formControlName="password" required >
       </div>
 
-      <div class="avisoRestriccion" *ngIf="this.checkoutForm.get('password')?.errors?.['required'] || this.checkoutForm.get('user')?.errors?.['required']">
+      <div class="avisoRestriccion" *ngIf="this.checkoutForm.get('password')?.errors?.['required'] || this.checkoutForm.get('id')?.errors?.['required']">
         <div> Todos los campos deben rellenarse</div>
       </div>
 

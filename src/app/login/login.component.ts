@@ -1,11 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {Grado, User} from "../objects";
+import {User} from "../objects";
 import { UserService } from "../usersServices/user.service";
-import { tap } from "rxjs";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import {DocumentChangeAction} from "@angular/fire/compat/firestore";
 
 @Component({
   selector: 'app-login',
@@ -59,16 +57,30 @@ export class LoginComponent implements OnInit {
     if (!this.checkoutForm.valid) {
       window.alert("Es necesario rellenar todos los campos");
     } else {
-      if (Object.keys(this.users).find(this.RegisterForm.value.id)) {
+      this.users.forEach((user) => {
+        if (user.id == this.id){
+          if (user.password == this.password){
+            this.router.navigate(['']);
+            window.alert("Sesión iniciada");
+          } else {
+            window.alert("Contraseña incorrecta");
+          }
+        }
+      });
+
+      /**if (Object.keys(this.users).find(this.RegisterForm.value.id)) {
         if (this.users[this.RegisterForm.value.id].password == this.RegisterForm.value.password) {
           this.router.navigate(['']);
+        } else {
+          window.alert("Contraseña incorrecta");
         }
-      }
+      } else {
+        window.alert("Usuario no registrado");
+      }**/
     }
   }
 
   onSubmitRegister(): void {
-    console.debug("hey");
     this.id = this.RegisterForm.get('id')?.value;
     this.email = this.RegisterForm.get('email')?.value;
     this.name = this.RegisterForm.get('name')?.value;

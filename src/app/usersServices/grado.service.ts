@@ -18,15 +18,19 @@ export class GradoService {
     return this.firestore.collection<Grado>('grados').snapshotChanges();
   }
 
-  getAsignaturas(id: string) {
+  getAsignaturas(gradoId: string) {
+    return this.firestore.collection<Grado>('asignaturas').snapshotChanges();
+  }
+
+  getAsignaturasGrado(id: string) {
     let asignaturas: number[] = []
+
     this.firestore
       .collection('grados')
       .doc(id)
       .valueChanges()
       // @ts-ignore
-      .subscribe((doc) => asignaturas = doc.asignaturas)
-
+      .subscribe((doc) => asignaturas = doc.exists ? doc.data.asignaturas : undefined)
     return asignaturas;
   }
 

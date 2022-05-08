@@ -13,13 +13,14 @@ import firestore = firebase.firestore;
 })
 export class GradosComponent implements OnInit {
 
-  gradoslist?: Grado[]
+  gradoslist: Grado[] = []
 
   constructor(private gradeService: GradoService) {
 
   }
 
   ngOnInit() {
+
     this.gradeService.getGrados()
       .subscribe(data => {
         this.gradoslist = data.map( e => {
@@ -29,11 +30,6 @@ export class GradosComponent implements OnInit {
             ...e.payload.doc.data()
           } as Grado;
           })})
-  }
-
-  getKeyByValue(gradoslist: Grado[], grado: Grado) {
-    // @ts-ignore
-    Object.keys(gradoslist).find(key => gradoslist[key] === grado)
   }
 
 }

@@ -1,0 +1,16 @@
+<h1></h1>
+<div *ngFor="let asignatura of asignaturaslist">
+  <ul class="listaAsignaturas">
+      <img class="fotoAsignatura" src="{{asignatura.img}}" width="120" height="120">
+      <section class="cajaInfoAsignaturas">
+        <h2 id="titulogrados">{{ asignatura.name }}</h2>
+        <p>{{asignatura.description}}</p>
+        <a id="botonnuestrosgrados">
+          <button style="height: 12%; width: 120px;">Más información</button>
+        </a>
+
+      </section>
+  </ul>
+</div>
+
+

@@ -5,7 +5,7 @@
     <section class="cajaInfoGrados">
       <h2 id="titulogrados">{{ grado.name }}</h2>
       <p>{{grado.description}}</p>
-      <a routerLink="['/grado', getKeyByValue(gradoslist, grado) ]"
+      <a [routerLink]="['/grado', this.grado.id]"
          routerLinkActive="active"
          id="botonnuestrosgrados">
         <button style="height: 12%; width: 120px;">Más información</button>

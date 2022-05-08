@@ -15,3 +15,13 @@ export interface Grado {
   asignaturas?: number[];
 }
 
+export interface Asignatura {
+  objetivos?: string
+  profesores?: string
+  creditos?: number
+  img?: string;
+  name?: string;
+  description?: string;
+  grados?: number[];
+}
+

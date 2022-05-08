@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { environment } from "../environments/environment";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { AsignaturasComponent } from './asignaturas/asignaturas.component';
 
 
 @NgModule({
@@ -32,8 +33,7 @@ import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
       {path: 'sobrenosotros', component: SobrenosotrosComponent},
       {path: 'grados', component: GradosComponent},
       {path: 'login', component: LoginComponent},
-      //{path: 'grado/:id', component: //GradoComponent},
-
+      {path: 'grado/:id', component: AsignaturasComponent},
     ]),
     FormsModule
   ],
@@ -49,6 +49,7 @@ import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
     SobrenosotrosComponent,
     GradosComponent,
     LoginComponent,
+    AsignaturasComponent,
   ],
   bootstrap: [
     AppComponent

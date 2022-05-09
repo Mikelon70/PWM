@@ -67,16 +67,6 @@ export class LoginComponent implements OnInit {
           }
         }
       });
-
-      /**if (Object.keys(this.users).find(this.RegisterForm.value.id)) {
-        if (this.users[this.RegisterForm.value.id].password == this.RegisterForm.value.password) {
-          this.router.navigate(['']);
-        } else {
-          window.alert("Contraseña incorrecta");
-        }
-      } else {
-        window.alert("Usuario no registrado");
-      }**/
     }
   }
 
@@ -105,6 +95,7 @@ export class LoginComponent implements OnInit {
         });
         if (this.registered != 1) {
           this.userService.addNewUser(this.RegisterForm.value.id, this.RegisterForm.value.name, this.RegisterForm.value.email, this.RegisterForm.value.password);
+          window.alert("Usuario registrado");
         }
       }
     }
